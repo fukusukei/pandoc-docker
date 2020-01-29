@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  texlive:
+    build: 
+      context: texlive
+      dockerfile: Dockerfile
+      args:
+          - http_proxy=${http_proxy}
+          - https_proxy=${https_proxy}
+          - no_proxy=${no_proxy}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
